@@ -22,6 +22,7 @@ const QrGenerater = () => {
   const [qrImage,setQrImage] = useState<string>("")
   
   const handleGenerate = async () => {
+    if(!value) return;
     try {
     const qr_image = await QRCode.toDataURL(value)
     setQrImage(qr_image)
